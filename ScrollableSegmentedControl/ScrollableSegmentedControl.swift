@@ -293,10 +293,6 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
                     collectionView?.deselectItem(at: indexPath, animated: true)
                 }
             }
-            
-            if oldValue != selectedSegmentIndex {
-                self.sendActions(for: .valueChanged)
-            }
         }
     }
     
@@ -500,7 +496,12 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
         
         // MARK UICollectionViewDelegate
         
-        fileprivate func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         fileprivate func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            if indexPath.item != segmentedControl.selectedSegmentIndex {
+                DispatchQueue.main.async { [weak self] in
+                    self?.segmentedControl.sendActions(for: .valueChanged)
+                }
+            }
             segmentedControl.selectedSegmentIndex = indexPath.item
         }
         
