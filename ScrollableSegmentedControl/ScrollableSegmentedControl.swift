@@ -277,7 +277,7 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
             
             if selectedSegmentIndex >= 0 {
 //                var scrollPossition:UICollectionView.ScrollPosition = .bottom
-//                let indexPath = IndexPath(item: selectedSegmentIndex, section: 0)
+                let indexPath = IndexPath(item: selectedSegmentIndex, section: 0)
 //                if let atribs = collectionView?.layoutAttributesForItem(at: indexPath) {
 //                    let frame = atribs.frame
 //                    if frame.origin.x < collectionView!.contentOffset.x {
