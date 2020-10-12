@@ -276,18 +276,17 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
             }
             
             if selectedSegmentIndex >= 0 {
-                var scrollPossition:UICollectionView.ScrollPosition = .bottom
-                let indexPath = IndexPath(item: selectedSegmentIndex, section: 0)
-                if let atribs = collectionView?.layoutAttributesForItem(at: indexPath) {
-                    let frame = atribs.frame
-                    if frame.origin.x < collectionView!.contentOffset.x {
-                        scrollPossition = .left
-                    } else if frame.origin.x + frame.size.width > (collectionView!.frame.size.width + collectionView!.contentOffset.x) {
-                        scrollPossition = .right
-                    }
-                }
-            
-                collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: scrollPossition)
+//                var scrollPossition:UICollectionView.ScrollPosition = .bottom
+//                let indexPath = IndexPath(item: selectedSegmentIndex, section: 0)
+//                if let atribs = collectionView?.layoutAttributesForItem(at: indexPath) {
+//                    let frame = atribs.frame
+//                    if frame.origin.x < collectionView!.contentOffset.x {
+//                        scrollPossition = .left
+//                    } else if frame.origin.x + frame.size.width > (collectionView!.frame.size.width + collectionView!.contentOffset.x) {
+//                        scrollPossition = .right
+//                    }
+//                }
+                collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
             } else {
                 if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
                     collectionView?.deselectItem(at: indexPath, animated: true)
