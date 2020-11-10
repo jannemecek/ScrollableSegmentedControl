@@ -536,7 +536,7 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
     // MARK: - SegmentCollectionViewCell
     
     private class BaseSegmentCollectionViewCell: UICollectionViewCell {
-        static let textPadding:CGFloat = 8.0
+        static let textPadding:CGFloat = 24.0
         static let imageToTextMargin:CGFloat = 14.0
         static let imageSize:CGFloat = 14.0
         static let defaultFont = UIFont.systemFont(ofSize: 14)
