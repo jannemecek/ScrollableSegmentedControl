@@ -568,6 +568,7 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
                         underlineView!.tag = 999
                         underlineView!.backgroundColor = tintColor
                         underlineView!.isHidden = !isSelected
+                        underlineView!.layer.cornerRadius = 1.5
                         contentView.insertSubview(underlineView!, at: contentView.subviews.count)
                     }
                     
@@ -599,8 +600,10 @@ public enum ScrollableSegmentedControlSegmentStyle: Int {
         private func configureConstraints() {
             if let underline = underlineView {
                 underline.translatesAutoresizingMaskIntoConstraints = false
-                underline.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-                underline.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+//                underline.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+//                underline.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+                underline.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+                underline.widthAnchor.constraint(equalToConstant: 32).isActive = true
                 underline.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
             }
         }
